@@ -66,6 +66,10 @@
             "Selenium.WebDriver": {
               "target": "Package",
               "version": "[4.32.0, )"
+            },
+            "WebDriverManager": {
+              "target": "Package",
+              "version": "[2.17.5, )"
             }
           },
           "imports": [

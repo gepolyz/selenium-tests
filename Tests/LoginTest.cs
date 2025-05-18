@@ -3,17 +3,15 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using SeleniumDemo.Pages;
 using NUnit.Framework;
-using System;
-using NUnit.Framework.Legacy;
-using OpenQA.Selenium.Support.UI;
+
 
 
 namespace SeleniumDemo.Tests
 {
     public class LoginTest
     {
-        private IWebDriver driver;
-        private LoginPage loginPage;
+        private IWebDriver driver = null!;
+        private LoginPage loginPage = null!;
 
         [SetUp]
         public void Setup()
