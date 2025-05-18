@@ -1,0 +1,31 @@
+name: Run Selenium Tests
+
+on:
+    push:
+        branches: [ main ]
+    pull_request:
+        branches: [main]
+
+jobs:
+    test:
+        runs-on: ubuntu-latest
+        
+        steps:
+          - name: Checkout code
+            uses: actions/checkout@v3
+
+          - name: Setup .NET
+            uses: actions/setup-dotnet@4
+            with:
+                dotnet-version: '8.0.x'
+
+          - name: Install Chrome
+            run: |
+                sudo apt update
+                sudo apt install -y google-chrome-stable
+
+          - name: Restore dependecies
+            run: dotnet restore
+
+          - name: Run Selenium Tests
+            run: dotnet test
