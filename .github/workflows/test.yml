@@ -40,7 +40,7 @@ jobs:
           - name: Restore dependecies
             run: dotnet restore
 
-          - name:  Run Selenium Tests and Export Results
+          - name:  Run Selenium Tests and Export the Results
             run: dotnet test --logger "trx;LogFileName=test-results.trx"
 
           - name:  Upload Test Report
