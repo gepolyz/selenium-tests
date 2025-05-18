@@ -33,8 +33,9 @@ jobs:
               DRIVER_VERSION=$(curl -s "https://googlechromelabs.github.io/chrome-for-testing/last-known-good-versions-with-downloads.json" | jq -r ".channels.Stable.version")
               DRIVER_URL=$(curl -s "https://googlechromelabs.github.io/chrome-for-testing/last-known-good-versions-with-downloads.json" | jq -r ".channels.Stable.downloads.chromedriver[] | select(.platform == \"linux64\") | .url")
               wget -O /tmp/chromedriver.zip "$DRIVER_URL"
-              unzip /tmp/chromedriver.zip -d /usr/local/bin/
-              chmod +x /usr/local/bin/chromedriver
+              unzip /tmp/chromedriver.zip -d /tmp/chromedriver
+              sudo mv /tmp/chromedriver/chromedriver-linux64/chromedriver /usr/local/bin/chromedriver
+              sudo chmod +x /usr/local/bin/chromedriver
 
           - name: Restore dependecies
             run: dotnet restore
