@@ -22,8 +22,6 @@ namespace SeleniumDemo.Tests
             options.AddArgument("--disable-gpu");
             options.AddArgument("--no-sandbox");
 
-            new WebDriverManager.DriverManager().SetUpDriver(new WebDriverManager.DriverConfigs.Impl.ChromeConfig());
-
             driver = new ChromeDriver(options);
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
             driver.Navigate().GoToUrl("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");

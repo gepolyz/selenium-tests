@@ -1,6 +1,10 @@
 name: Run Selenium Tests
 
-on: [push, pull_request]
+on: 
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
 jobs:
     test:
@@ -10,24 +14,18 @@ jobs:
           - name: Checkout code
             uses: actions/checkout@v3
 
-          - name: Setup .NET
+          - name: Setup .NET SDK
             uses: actions/setup-dotnet@v4
             with:
                 dotnet-version: '8.0.x'
 
-          - name: Install Chrome
+          - name: Install Google Chrome
             run: |
                 sudo apt update
                 sudo apt install -y google-chrome-stable
-                CHROME_VERSION=$(google-chrome --version | grep -oP "\d+\.\d+\.\d+")
-                echo "Using Chrome version: $CHROME_VERSION"
-                wget -q https://chromedriver.storage.googleapis.com/$(curl -s https://chromedriver.storage.googleapis.com/LATEST_RELEASE)/chromedriver_linux64.zip
-                unzip chromedriver_linux64.zip
-                sudo mv chromedriver /usr/local/bin/
-                sudo chmod +x /usr/local/bin/chromedriver
 
           - name: Restore dependecies
             run: dotnet restore
 
-          - name: Run Selenium Tests
+          - name: Run Selenium Tests Headlessly
             run: dotnet test
