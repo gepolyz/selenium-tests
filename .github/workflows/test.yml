@@ -40,5 +40,11 @@ jobs:
           - name: Restore dependecies
             run: dotnet restore
 
-          - name: Run Selenium Tests Headlessly
-            run: dotnet test
+          - name:  Run Selenium Tests and Export Results
+            run: dotnet test --logger "trx;LogFileName=test-results.trx"
+
+          - name:  Upload Test Report
+            uses: actions/upload-artifact@v3
+            with:
+              name: Test Results
+              path: '**/test-results.trx'
