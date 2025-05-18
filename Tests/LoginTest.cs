@@ -17,13 +17,15 @@ namespace SeleniumDemo.Tests
         public void Setup()
         {
             var options = new ChromeOptions();
+            
             options.AddArgument("--headless"); //Run Chrome in headless mode
             options.AddArgument("--window-size=1920,1080");
             options.AddArgument("--disable-gpu");
             options.AddArgument("--no-sandbox");
-
+            
             ChromeDriverService service;
 
+            // Checks in what Operating System are waorking
             if (OperatingSystem.IsWindows())
             {
                 // Let Selenium find chromedriver.exe in PATH (you must install it yourself)
@@ -54,6 +56,19 @@ namespace SeleniumDemo.Tests
             loginPage.EnterPassword("admin123");
             loginPage.ClickLogin();
             Assert.That(loginPage.WaitForDashboard(), Is.True);
+        }
+        
+        [Test]
+        public void Logout_AfterLogin_ShouldReturnToLoginPage()
+        {
+            loginPage.EnterUserName("Admin");
+            loginPage.EnterPassword("admin123");
+            loginPage.ClickLogin();
+            loginPage.WaitForDashboard();
+            loginPage.ClickUserDropDown();
+
+            loginPage.ClickLogout();
+            Assert.That(loginPage.WaitForLoginPage(), Is.True);   
         }
 
         [Test]
