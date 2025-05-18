@@ -22,7 +22,10 @@ namespace SeleniumDemo.Tests
             options.AddArgument("--disable-gpu");
             options.AddArgument("--no-sandbox");
 
-            driver = new ChromeDriver(options);
+            // Tell Selenium where to find chromedriver (GitHub runner path)
+            var chromeDriverService = ChromeDriverService.CreateDefaultService("/usr/local/bin");
+            driver = new ChromeDriver(chromeDriverService, options);
+
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
             driver.Navigate().GoToUrl("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
             loginPage = new LoginPage(driver);
