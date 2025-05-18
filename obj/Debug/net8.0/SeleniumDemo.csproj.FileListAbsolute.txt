@@ -164,3 +164,6 @@ C:\Users\gepol\CSharpProjects\SeleniumQAProject\SeleniumDemo\obj\Debug\net8.0\Se
 C:\Users\gepol\CSharpProjects\SeleniumQAProject\SeleniumDemo\obj\Debug\net8.0\ref\SeleniumDemo.dll
 C:\Users\gepol\CSharpProjects\SeleniumQAProject\SeleniumDemo\bin\Debug\net8.0\SeleniumExtras.WaitHelpers.dll
 C:\Users\gepol\CSharpProjects\SeleniumQAProject\SeleniumDemo\obj\Debug\net8.0\SeleniumDemo.sourcelink.json
+C:\Users\gepol\CSharpProjects\SeleniumQAProject\SeleniumDemo\bin\Debug\net8.0\AngleSharp.dll
+C:\Users\gepol\CSharpProjects\SeleniumQAProject\SeleniumDemo\bin\Debug\net8.0\ICSharpCode.SharpZipLib.dll
+C:\Users\gepol\CSharpProjects\SeleniumQAProject\SeleniumDemo\bin\Debug\net8.0\WebDriverManager.dll
