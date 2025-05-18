@@ -22,9 +22,24 @@ namespace SeleniumDemo.Tests
             options.AddArgument("--disable-gpu");
             options.AddArgument("--no-sandbox");
 
-            // Tell Selenium where to find chromedriver (GitHub runner path)
-            var chromeDriverService = ChromeDriverService.CreateDefaultService("/usr/local/bin");
-            driver = new ChromeDriver(chromeDriverService, options);
+            ChromeDriverService service;
+
+            if (OperatingSystem.IsWindows())
+            {
+                // Let Selenium find chromedriver.exe in PATH (you must install it yourself)
+                service = ChromeDriverService.CreateDefaultService();
+            }
+            else if (OperatingSystem.IsLinux())
+            {
+                // Use manually installed path on GitHub Actions
+                service = ChromeDriverService.CreateDefaultService("/usr/local/bin");
+            }
+            else
+            {
+                throw new PlatformNotSupportedException("Unsupported OS for ChromeDriver setup");
+            }
+
+            driver = new ChromeDriver(service, options);
 
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
             driver.Navigate().GoToUrl("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
