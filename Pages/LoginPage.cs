@@ -22,8 +22,9 @@ namespace SeleniumDemo.Pages
         private IWebElement PasswordInput => _driver.FindElement(By.Name("password"));
         private IWebElement LoginButton => _driver.FindElement(By.TagName("button"));
         private By ErrorMessage => By.CssSelector(".oxd-alert-content-text");
+        private By ContentTextAlert => By.CssSelector(".oxd-input-field-error-message");
         private IWebElement UserAreaDropDownMenu => _driver.FindElement(By.CssSelector(".oxd-topbar-header-userarea"));
-        private IWebElement LogoutSelection => _driver.FindElement(By.XPath("//html//body//div//div[1]//div[1]//header//div[1]//div[3]//ul//li//ul//li[4]//a"));
+        private IWebElement LogoutSelection => _driver.FindElement(By.CssSelector("a.oxd-userdropdown-link[href*='logout']"));
 
         //Actions
         public void EnterUserName(string username) => UserNameInput.SendKeys(username);
@@ -41,6 +42,12 @@ namespace SeleniumDemo.Pages
         {
             _wait.Until(ExpectedConditions.ElementIsVisible(ErrorMessage));
             return _driver.FindElement(ErrorMessage).Text;
+        }
+
+        public string GetAlertForContent()
+        {
+            _wait.Until(ExpectedConditions.ElementIsVisible(ContentTextAlert));
+            return _driver.FindElement(ContentTextAlert).Text;
         }
 
         public bool WaitForLoginPage()

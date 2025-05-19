@@ -72,6 +72,15 @@ namespace SeleniumDemo.Tests
         }
 
         [Test]
+        public void Login_With_Blank_Credentials()
+        {
+            loginPage.EnterUserName("");
+            loginPage.EnterPassword("");
+            loginPage.ClickLogin();
+            Assert.That(loginPage.GetAlertForContent().Contains("Required"));
+        }
+
+        [Test]
         [TestCase("ad", "123")]
         [TestCase("Admin", "ddd")]
         [TestCase("Jone", "admin123")]
