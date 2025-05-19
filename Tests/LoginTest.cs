@@ -19,9 +19,9 @@ namespace SeleniumDemo.Tests
             var options = new ChromeOptions();
             
             options.AddArgument("--headless"); //Run Chrome in headless mode
-            options.AddArgument("--window-size=1920,1080");
-            options.AddArgument("--disable-gpu");
-            options.AddArgument("--no-sandbox");
+            //options.AddArgument("--window-size=1920,1080");
+           // options.AddArgument("--disable-gpu");
+           // options.AddArgument("--no-sandbox");
             
             ChromeDriverService service;
 
