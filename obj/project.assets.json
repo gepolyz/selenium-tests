@@ -2092,11 +2092,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\gepol\\CSharpProjects\\SeleniumQAProject\\SeleniumDemo\\SeleniumDemo.csproj",
+      "projectUniqueName": "c:\\Users\\gepol\\CSharpProjects\\SeleniumQAProject\\SeleniumDemo\\SeleniumDemo.csproj",
       "projectName": "SeleniumDemo",
-      "projectPath": "C:\\Users\\gepol\\CSharpProjects\\SeleniumQAProject\\SeleniumDemo\\SeleniumDemo.csproj",
+      "projectPath": "c:\\Users\\gepol\\CSharpProjects\\SeleniumQAProject\\SeleniumDemo\\SeleniumDemo.csproj",
       "packagesPath": "C:\\Users\\gepol\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\gepol\\CSharpProjects\\SeleniumQAProject\\SeleniumDemo\\obj\\",
+      "outputPath": "c:\\Users\\gepol\\CSharpProjects\\SeleniumQAProject\\SeleniumDemo\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\gepol\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -2173,7 +2173,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.408/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.409/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
