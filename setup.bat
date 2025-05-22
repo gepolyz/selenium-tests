@@ -8,4 +8,5 @@ dotnet build
 echo Selenium project is ready to run.
 echo To run tests, use:
 echo dotnet test --no-restore --verbosity normal
+dotnet test --no-restore --verbosity normal
 pause

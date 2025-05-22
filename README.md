@@ -30,6 +30,12 @@ A Ci Pipeline is includes in .github/workflows/test.yml, which:
 
 - Uploads test results (.trx) as artifacts
 
+## One-Command Setup
+### Windows Shell
+```bash
+start .\setup.bat
+```
+
 ## Notes
 - Tests are designed to run headlessly by default.
 
