@@ -1,4 +1,5 @@
 # Selenium UI Test 
+This repository contains automated UI tests for the OrangeHRM demo site, built with **Selenium WebDriver**, **NUnit**, and **C#**.
 
 ## Technologies Used
 - .NET 8
